@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/sharmas4/ieb-common-devel/t/tests'
+let g:netrw_dirhist_2='/home/sharmas4/dobsonrr-vim/colors'
+let g:netrw_dirhist_3='/home/sharmas4/code/aims/lib/App/AIMS/Roles/Schema/HasWorkflow'
+let g:netrw_dirhist_4='/home/sharmas4/code/aims/lib/App/AIMS'
+let g:netrw_dirhist_5='/home/sharmas4/code/test-dbix-class-fixture-factory'
+let g:netrw_dirhist_6='/home/sharmas4/code/aims/root/compounds'
+let g:netrw_dirhist_7='/home/sharmas4/code/aims/lib/App/AIMS/Web/Form/Roles/HasTests'
+let g:netrw_dirhist_8='/home/sharmas4/.vim'
+let g:netrw_dirhist_9='/home/sharmas4/code/aims/lib/App/AIMS/Schema/Result/Tests'

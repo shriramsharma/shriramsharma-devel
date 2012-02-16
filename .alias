@@ -1,0 +1,26 @@
+alias vi=vim
+alias gb='git branch'
+alias gco='git checkout'
+alias gcm='git commit'
+alias add='git add'
+alias prune='git remote prune origin'
+alias status='git status'
+
+alias gf="git-forest --color --sha --style=2"
+alias gfh="git-forest --color --sha --style=2 |head -n 20"
+alias glp="git log -p --reverse --color"
+alias grm='git rm $(git ls-files --deleted)'
+alias prv='prove -lv t'
+alias home="cd ~"
+alias testapp="prove -lv t"
+alias ebash="vi ~/.bashrc"
+alias evim="vi ~/.vimrc"
+alias stash="git stash"
+alias pop="git stash pop"
+alias rmb="git branch -D"
+alias startms="mysql -u root -p -P 4006 -h 127.0.0.1"
+alias tc="perl -c -Ilib -It/tests"
+alias pc="perl -c -Ilib"
+alias prb="git remote prune origin"
+alias sprove="CATALYST_DEBUG=0 prove -l"
+alias ldap="/usr/lib64/mozldap/ldapsearch -b dc=nih,dc=gov -h LDAPAD.NIH.GOV -D CN=sharmas4,DC=nih,DC=gov -w -"
