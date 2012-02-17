@@ -1,7 +1,3 @@
-export PATH=/opt/vim/bin:/opt/perl/bin:/opt/git/bin:$PATH
-use warnings;
-PATH=~/ieb-common-devel/bin/:$PATH
-. /home/sharmas4/.git-completion.bash
 . $HOME/.git-completion.bash
 
 complete -o default -o nospace -F _git_checkout gco

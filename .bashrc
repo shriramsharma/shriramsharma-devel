@@ -1,8 +1,4 @@
-export GRAILS_HOME="/Users/shriramsharma/springsource/grails-1.3.7"
-export PATH="$HOME/SU/Android/android-sdk-mac_x86/tools:$HOME/SU/Android/android-sdk-mac_x86/platform-tools;$HOME/NIH/bin:$PATH:$GRAILS_HOME/bin:$HOME/NIH/ieb-common-devel/bin"
-export CVSROOT="$HOME/SU/cvs_temp"
-
-export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
+. $HOME/.git-completion.bash
 
 complete -o default -o nospace -F _git_checkout gco
 complete -o default -o nospace -F _git_branch gb
@@ -132,7 +128,7 @@ setprompt() {
   P7="[Screen: $WINDOW]"
   
 
-  PS1="\n$P1 $P2 [$P6] $P3 $P4\n$P5 $P7 \$ "
+  PS1="\n$P1 $P2 [$P6] $P4\n$P5 $P7 \$ "
 }
 
 if [ $TERM = 'dumb' ]; then
