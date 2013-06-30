@@ -11,11 +11,6 @@ if [ -f $HOME/.alias ]; then
   . $HOME/.alias
 fi
 
-export MANPATH=/opt/perl/man:/opt/git/share/man
-if [ -d $HOME/man ]; then
-  export MANPATH=$MANPATH:$HOME/man
-fi
-
 if [ -d $HOME/bin ]; then
   export PATH=$HOME/bin:$PATH
 fi
@@ -136,3 +131,22 @@ if [ $TERM = 'dumb' ]; then
 else
     PROMPT_COMMAND=setprompt
 fi
+
+## The below code was yanked from http://pascal.nextrem.ch/2010/04/30/automatically-start-screen-on-ssh-login
+
+# Auto-screen invocation. see: http://taint.org/wk/RemoteLoginAutoScreen
+# if we're coming from a remote SSH connection, in an interactive session
+# then automatically put us into a screen(1) session.   Only try once
+# -- if $STARTED_SCREEN is set, don't try it again, to avoid looping
+# if screen fails for some reason.
+if [ "$PS1" != "" -a "${STARTED_SCREEN:-x}" = x ]
+then
+  STARTED_SCREEN=1 ; export STARTED_SCREEN
+  [ -d $HOME/lib/screen-logs ] || mkdir -p $HOME/lib/screen-logs
+  sleep 1
+  screen -RR S && exit 0
+  # normally, execution of this rc script ends here...
+  echo "Screen failed! continuing with normal bash startup"
+fi
+# [end of auto-screen snippet]
+
