@@ -1,6 +1,6 @@
 [user]
-	name = Shriram
-	email = shriramsharma@ubuntusony.com
+	name = Shriram Sharma
+	email = ssharma5@walmartlabs.com
 [color]
   ui = auto
 [color "branch"]
@@ -13,9 +13,9 @@
   old  = red bold
   new  = green bold
 [color "status"]
-  added     = yellow
-  changed   = green
-  untracked = cyan
+  added     = yellow bold
+  changed   = red bold
+  untracked = cyan bold
 [core]
   excludesfile = "~/.gitignore"
   editor       = "vim"
