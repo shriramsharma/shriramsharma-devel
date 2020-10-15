@@ -1,26 +1,31 @@
 export PATH=/usr/local/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home -v '1.8*')
+#export JAVA_HOME=$(/usr/libexec/java_home -v '1.8*')
 export M2_HOME=/Users/sshar47/Shriram/apache-maven-3.2.3
 export M2=$M2_HOME/bin
 export NOTIPATH=/Users/sshar47/Shriram/Scratch/noti
 export NOTI_PB=o.XzgTgFasDEsMU76wfdYR32mznIzrUM0L
 export GOPATH=$HOME/Shriram/go
-export GOROOT_BOOTSTRAP=$(go env GOROOT)
+#export GOROOT_BOOTSTRAP=$(go env GOROOT)
 export ANTHOME=/Users/sshar47/Shriram/Downloads/apache-ant-1.9.7
 export SCALA_HOME=/Users/sshar47/Shriram/Downloads/scala-2.10.4
 export DEPOT_TOOLS_HOME=/Users/sshar47/Shriram/udemy/javascript/depot_tools
 export MY_SCRIPTS=/Users/sshar47/Shriram/scripts
-export PATH=$SCALA_HOME/bin:$JAVA_HOME/bin:$M2:$NOTIPATH:$ANTHOME/bin:$DEPOT_TOOLS_HOME:$MY_SCRIPTS:$HOME/Shriram/goroots/go1.11/bin:$PATH:$GOPATH/bin
+export MARKDOWN_TOC_PATH=/Users/sshar47/Shriram/github/markdown-toc/node_modules
+export FLUTTER=/Users/sshar47/Shriram/github/flutter
+export PATH=$SCALA_HOME/bin:$JAVA_HOME/bin:$M2:$NOTIPATH:$ANTHOME/bin:$DEPOT_TOOLS_HOME:$MY_SCRIPTS:$HOME/Shriram/go1.13/bin:$PATH:$GOPATH/bin:$MARKDOWN_TOC_PATH:$FLUTTER/bin
 export FZF_TMUX=1
 export FZF_TMUX_HEIGHT='40'
-#export GITHUB_TOKEN=98221f932dd1fa86486f0f8567306b8fa16fdff5
-#export HOMEBREW_GITHUB_API_TOKEN=bc4e933699711add65d3d12191f94fac9c115fb2
-export HOMEBREW_GITHUB_API_TOKEN=31e34bba7b69b1e05e55383f05ac83dc253ef5e1
+
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME/Shriram"
 
 
-eval "$(jump shell)"
+SHELL_SESSION_HISTORY=0
 
+#. /usr/local/etc/profile.d/bash_completion.sh
 . $HOME/.git-completion.bash
+. /etc/bash_completion.d
 
 HISTFILESIZE=10000
 
@@ -169,3 +174,10 @@ export NVM_DIR="/Users/sshar47/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#/usr/local/etc/profile.d/bash_completion.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+#if [ -f '/Users/sshar47/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/sshar47/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+#if [ -f '/Users/sshar47/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/sshar47/Downloads/google-cloud-sdk/completion.bash.inc'; fi
