@@ -51,6 +51,20 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+function _update_linux_ps1() {
+	if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+  		powerline-daemon -q
+    		POWERLINE_BASH_CONTINUATION=1
+      		POWERLINE_BASH_SELECT=1
+        	source /usr/share/powerline/bindings/bash/powerline.sh
+	fi
+}
+
+if [[ "$OSTYPE" == "linux"* ]]; then
+    PROMPT_COMMAND="_update_linux_ps1; $PROMPT_COMMAND"
+fi
+
+
 
 #if [ $TERM = 'dumb' ]; then
 #    PS1='$ '
