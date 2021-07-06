@@ -9,6 +9,8 @@ init:
 	ln -vsf ${PWD}/.alias ${HOME}/.tmux.alias
 	ln -vsf ${PWD}/.bash_profile ${HOME}/.tmux.bash_profile
 
+all: install-packages
+
 install-packages:
 ifeq ($(UNAME),Darwin)
 	@echo "Darwin detected"
@@ -39,25 +41,27 @@ else
 		tmux \
 		zsh \
 		curl \
-		php php-xdebug php-mysql php-curl php-xml \
-		mysql-server \
-		xclip \
-		yui-compressor \
-		nodejs \
-		npm \
 		tree \
+		xclip \
 		powerline \
-		pv \
-		ruby \
 		ruby-dev \
 		python3-pip
 endif
 
+powerline-fonts:
+	git clone https://github.com/powerline/fonts.git --depth=1
+	cd 	fonts && sh /install.sh
+
 goinstall: #Install GoLang
 	@echo "Installing Goland"
-	curl -fsSL https://golang.org/dl/go1.15.4.linux-amd64.tar.gz -o go1.15.4.linux-amd64.tar.gz
-	tar -C /usr/local -xzf go1.15.4.linux-amd64.tar.gz
+	curl -fsSL https://golang.org/dl/go1.15.4.linux-amd64.tar.gz -o /tmp/go1.15.4.linux-amd64.tar.gz
+	sudo tar -C /usr/local -xzf /tmp/go1.15.4.linux-amd64.tar.gz
 
 vim:
 	cp -R ${PWD}/.vim ${HOME}/
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+tpm:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+.PHONY: all goinstall vim tpm
