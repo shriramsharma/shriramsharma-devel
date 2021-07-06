@@ -1,45 +1,15 @@
-alias vi=/usr/local/bin/vim
+# git and tig related stuff
 alias tr='tig refs'
 alias ts='tig status'
 alias tl='tig log'
 alias tsh='tig stash'
+alias nopush='git remote set-url --push upstream no-push'
 
-alias gf="git-forest --color --sha --style=2"
-alias gfh="git-forest --color --sha --style=2 |head -n 20"
-alias glp="git log -p --reverse --color"
-alias grm='git rm $(git ls-files --deleted)'
-alias prv='prove -lv t'
-alias home="cd ~"
-alias ebash="vi ~/.bashrc"
-alias evim="vi ~/.vimrc"
-alias stash="git stash"
-alias pop="git stash pop"
-alias rmb="git branch -D"
-alias gitbase="cd ~/Shriram/Sandbox/"
-alias stc="/Users/sshar47/Shriram/apache-tomcat-8.0.12/bin/catalina.sh jpda start"
-alias tpid="ps -ef | grep runOnEnv"
-alias gcr="git log -p --reverse"
-alias shive="ssh cdc-main-client00.bfd.walmart.com"
-alias shive1="ssh cdc-main-client01.bfd.walmart.com"
-alias sdevdb="ssh oracle@oracle.dev.pronto-oracle.platform.qa.walmart.com"
-alias sdev3="ssh app@10.242.174.163"
-alias slinux="ssh sshar47@172.28.202.172"
-alias sdev="ssh app@10.242.174.163"
-alias qalogmonc1="ssh -t app@10.242.174.151 tail -F /log/logmon/logmon_new.log"
-alias qalogmonc1="ssh -t app@10.242.174.154 tail -F /log/logmon/logmon_new.log"
-alias devlogmonc1="ssh -t app@10.242.174.163 tail -F /log/logmon/logmon_new.log"
-alias devhdfs="ssh sshar47@cbui-dev-bts-audit.sv.walmartlabs.com"
-alias qahdfs="ssh sshar47@cbui-qa-bts-audit.sv.walmartlabs.com"
-alias prodhdfs="ssh sshar47@cbui-dev-prod-audit.sv.walmartlabs.com"
-alias sjtm="ssh sshar47@jackthemonkey.cb.walmart.com"
-alias sdocker='ssh app@10.227.65.118'
-alias dockerset='eval "$(docker-machine env default)"'
-alias bumpversion='mvn release:update-versions -DautoVersionSubmodules=true'
-alias screen='/usr/local/bin/screen'
-alias sexpo='ssh -i /Users/sshar47/Shriram/ips/expo_key.txt expo@10.117.144.195'
-alias scpexpo='function _scpexpo(){ echo $1; scp -i /Users/sshar47/Shriram/ips/expo_key.txt $1 expo@10.117.144.195:~/; };_scpexpo'
-alias go18='$HOME/Shriram/goroots/go1.8/bin/go'
-alias gomaster='$HOME/Shriram/goroots/go-master/bin/go'
+# docker shortcuts
+alias dscf='docker rm -f ${docker ps -a -q}'
+
+alias ckcert='function _checkcert(){ echo \"GET /\" | openssl s_client -servername $1 -connect $2:443 | openssl x509 -noout -text; };_checkcert'
+alias vi=/usr/local/bin/vim
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
