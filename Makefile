@@ -64,4 +64,8 @@ vim:
 tpm:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+neovim:
+	brew install neovim
+	cp nvim_init.vim ${HOME}/.config/nvim/init.vim
+
 .PHONY: all goinstall vim tpm
